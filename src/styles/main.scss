@@ -1,0 +1,45 @@
+@use 'variables';
+@use 'header';
+@use 'home';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: variables.$montserrat;
+}
+
+body {
+    background-color: variables.$bgColor;
+    color: variables.$textColor;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 12px;
+    width: 35%;
+    color: #00050d;
+    font-weight: 600;
+    background-color: #F2E205;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: #fff241;
+        transform: scale(1.1)
+    }
+}
