@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     padding: 100px 0 100px 0;
     border-bottom: 1px solid rgba(215, 242, 5, 0.5);
 
@@ -14,10 +13,12 @@
 
         &__title {
             margin-bottom: 16px;
+            line-height: 29px;
         }
 
-        &__sub-title {
+        &__text {
             margin-bottom: 16px;
+            line-height: 21px;
         }
     }
 

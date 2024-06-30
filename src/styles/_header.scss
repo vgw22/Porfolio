@@ -4,27 +4,69 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     padding: 24px 0;
     border-bottom: 1px solid #D7F205;
 
-    &__title {
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        h1 {
-            color: #D7F205;
-            font-family: variables.$ubuntuMono;
-            font-weight: bold;
+        &__title {
+
+            h1 {
+                color: #D7F205;
+                font-family: variables.$ubuntuMono;
+                font-weight: bold;
+            }
+    
+            @media screen and (max-width: variables.$mobile) {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: variables.$tabletMax) {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .hamburguer-menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid #D7F205;
+            border-radius: 8px;
+            max-width: 48px;
+            margin-left: 32px;
+            cursor: pointer;
+        
+            span {
+                display: block;
+                width: 26px;
+                height: 2px;
+                background-color: #D7F205;
+            }
+            
+            &__line {
+                margin-bottom: 8px;
+            }
+
+            @media screen and (max-width: variables.$tabletMax) {
+                display: flex;
+            }
         }
     }
 
-    &__navbar {
+    &__navbar { 
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
 
-        &__item {
-            
+        &__item {      
+            padding: 8px;
+
             a {
                 padding: 8px;
 
@@ -38,6 +80,31 @@
                     color: #fff;
                 }
             }
+
+            &--is-active {
+                border: 2px solid #D7F205;
+                border-radius: 10px;
+
+                a {
+                    color: #F2E205;
+
+                    &:hover {
+                        color: #F2E205;
+                    }
+                }
+            }
+
+            @media screen and (max-width: variables.$tabletMax) {
+                padding: 8px;
+            }
+        }   
+
+        @media screen and (max-width: variables.$tabletMax) {
+            display: none;
         }
+    }
+
+    @media screen and (max-width: variables.$tabletMax) {
+        display: block;
     }
 }

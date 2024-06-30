@@ -1,6 +1,10 @@
 @use 'variables';
 @use 'header';
 @use 'home';
+@use 'about';
+@use 'contact';
+@use 'projects';
+
 
 * {
     padding: 0;
@@ -12,6 +16,42 @@
 body {
     background-color: variables.$bgColor;
     color: variables.$textColor;
+    letter-spacing: 0.03em;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 5px;
+    font-weight: 500;
+}
+
+@mixin title($fontSize: 32px) {
+    @include text($fontSize);
+    color: #F2E205;
+    font-weight: bold
+}
+
+
+.text--big {
+    @include text(18px);
+}
+
+.text {
+    @include text(16px);
+}
+
+.text--small {
+    @include text(14px);
+}
+
+.title {
+    @include title(24px);
+}
+
+.footer {
+    background-color: #000;
+    padding: 24px 0;
+    text-align: center;
 }
 
 li {
@@ -25,11 +65,17 @@ a {
 .container {
     max-width: 1024px;
     margin: 0 auto;
+
+    @media screen and (max-width: variables.$tabletMax) {
+        max-width: 80%;
+    }
 }
 
 .btn {
+    display: inline-block;
+    text-align: center;
     padding: 12px;
-    width: 35%;
+    width: 40%;
     color: #00050d;
     font-weight: 600;
     background-color: #F2E205;
@@ -40,6 +86,21 @@ a {
 
     &:hover {
         background-color: #fff241;
-        transform: scale(1.1)
+        transform: scale(1.1);
     }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.15);
 }

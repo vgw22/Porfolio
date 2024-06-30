@@ -1,0 +1,31 @@
+@use 'variables';
+
+.about {
+    display: block;
+    padding: 100px 0 100px 0;
+
+    &__title {
+        display: block;
+        text-align: center;
+        margin-bottom: 32px;
+        color: #F2E205;
+    }
+
+    &__infos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__item {
+            max-width: 33%;
+            text-align: center;
+
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+        }
+    }
+}

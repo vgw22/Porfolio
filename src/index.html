@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Vitor Winck</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -13,34 +15,131 @@
 <body>
     <div class="container">
         <header class="header">
-            <a href="#" class="header__title">
-                <h1>&lt;Portfólio de Vitor Winck/&gt;</h1>
-            </a>
+            <div class="header__content">
+                <a href="#" class="header__content__title">
+                    <h1>&lt;Portfólio de Vitor Winck/&gt;</h1>
+                </a>
+                <div class="hamburguer-menu">
+                    <span class="hamburguer-menu__line"></span>
+                    <span class="hamburguer-menu__line"></span>
+                    <span></span>
+                </div>
+            </div>
             <ul class="header__navbar">
-                <li class="header__navbar__item">
-                    <a href="#about ">Sobre mim</a>
+                <li class="header__navbar__item header__navbar__item--is-active">
+                    <a class="text--big" href="#about">Sobre mim</a>
                 </li>
                 <li class="header__navbar__item">
-                    <a href="#" >Contato</a>
+                    <a class="text--big" href="#contact">Contato</a>
                 </li>
                 <li class="header__navbar__item">
-                    <a href="#" >Projetos</a>
+                    <a class="text--big" href="#projects">Projetos</a>
                 </li>
             </ul>
         </header>
-        <div class="home">
+        <div class="home section">
             <div class="home__infos">
                 <h2 class="home__infos__title">Desenvolvedor Full Stack Java</h2>
-                <h4 class="home__infos__sub-title">Em formação pela EBAC - Escola Britânica de Artes Criativas & Tecnologia</h4>
-                <button type="button" class="btn" href="#">Baixar Currículo</button>
+                <p class="home__infos__text">Em formação pela EBAC - Escola Britânica de Artes Criativas & Tecnologia</p>
+                <a class="btn" href="https://tinyurl.com/bp5mr7rz   ">Baixar Currículo</a>
             </div>
             <div class="home__image">
                 <img src="./images/code-1076536_1920.jpg" alt="Tela com linhas de códigos html">
             </div>
         </div>
-        <section class="about">
-            
+        <section class="about section" id="about">
+            <h2 class="about__title title">Sobre mim</h2>
+            <div class="about__infos">
+                <p class="about__infos__item text--big">
+                    Olá! Meu nome é Vitor Gabriel Winck, tenho 19 anos e atualmente estou me especializando em Desenvolvimento Full Stack Java pela EBAC - Escola Britânica de Artes Criativas & Tecnologia.
+                </p>
+                <div class="about__infos__item">
+                    <img src="https://via.placeholder.com/250x250" alt="">
+                </div>
+                <p class="about__infos__item text--big">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ipsa autem odit voluptatibus magni eum, ut dolore fugiat! Error accusamus dicta inventore at sunt, labore iste facilis non quos perferendis.
+                </p>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <ul class="contact__list">
+                <li class="contact__list__item">
+                    <a href="#"><img src="./images/user.svg" alt=""></a>
+                    <h4>Nome</h4>
+                    <p>Vitor Gabriel Winck</p>
+                </li>
+                <li class="contact__list__item">
+                    <a href="#"><img src="./images/phone.svg" alt=""></a>
+                    <h4>Telefone</h4>
+                    <p>(51) 99367-7792</p>
+                </li>
+                <li class="contact__list__item">
+                    <a href="#"><img src="./images/mail.svg" alt=""></a>
+                    <h4>E-mail</h4>
+                    <p>vitorgabrielwinck2222@gmail.com</p>
+                </li>
+                <li class="contact__list__item">
+                    <a href="#"><img src="./images/instagram.svg" alt=""></a>
+                    <h4>Instagram</h4>
+                    <p>_vitorwinck</p>
+                </li>
+            </ul>
+        </section>
+        <section class="projects section" id="projects">
+            <h2 class="projects__title title">Projetos em Destaque</h2>
+            <div class="projects__list">
+                <div class="projects__list__item">
+                    <img src="https://via.placeholder.com/500x300" alt="">
+                    <h4 class="projects__list__item__title">Nome do Projeto</h4>
+                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <div class="projects__list__item__buttons">
+                        <a class="btn" href="#">Acessar projeto</a>
+                        <a class="btn" href="#">Acessar repositório</a>
+                    </div>
+                </div>
+                <div class="projects__list__item">
+                    <img src="https://via.placeholder.com/500x300" alt="">
+                    <h4 class="projects__list__item__title">Nome do Projeto</h4>
+                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <div class="projects__list__item__buttons">
+                        <a class="btn" href="#">Acessar projeto</a>
+                        <a class="btn" href="#">Acessar repositório</a>
+                    </div>
+                </div>
+                <div class="projects__list__item">
+                    <img src="https://via.placeholder.com/500x300" alt="">
+                    <h4 class="projects__list__item__title">Nome do Projeto</h4>
+                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <div class="projects__list__item__buttons">
+                        <a class="btn" href="#">Acessar projeto</a>
+                        <a class="btn" href="#">Acessar repositório</a>
+                    </div>
+                </div>
+                <div class="projects__list__item">
+                    <img src="https://via.placeholder.com/500x300" alt="">
+                    <h4 class="projects__list__item__title">Nome do Projeto</h4>
+                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <div class="projects__list__item__buttons">
+                        <a class="btn" href="#">Acessar projeto</a>
+                        <a class="btn" href="#">Acessar repositório</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
+    <footer class="footer">
+        &copy;2024 - Todos os direitos reservados | Vitor Gabriel Winck
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hamburguer-menu').click(function() {
+                $('.header__navbar').slideToggle();
+            })
+        })
+    </script>
 </body>
 </html>

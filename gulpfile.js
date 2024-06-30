@@ -8,7 +8,7 @@ const paths = {
     }
 };
 
-function compileSass(cb) {
+function compileStyles(cb) {
     gulp.src(paths.styles.src)
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(gulp.dest(paths.styles.dest));
@@ -16,12 +16,12 @@ function compileSass(cb) {
 }
 
 function watchFiles() {
-    gulp.watch(paths.styles.src, compileSass);
+    gulp.watch(paths.styles.src, compileStyles);
 }
 
-exports.compileSass = compileSass;
+exports.compileStyles = compileStyles;
 exports.watch = gulp.series(
-    gulp.parallel(compileSass),
+    gulp.parallel(compileStyles),
     watchFiles
 )
 
