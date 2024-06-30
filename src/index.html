@@ -41,7 +41,7 @@
             <div class="home__infos">
                 <h2 class="home__infos__title">Desenvolvedor Full Stack Java</h2>
                 <p class="home__infos__text">Em formação pela EBAC - Escola Britânica de Artes Criativas & Tecnologia</p>
-                <a class="btn" href="https://tinyurl.com/bp5mr7rz   ">Baixar Currículo</a>
+                <a class="btn" href="https://download943.mediafire.com/lfl5tlglahkgXjpavIGPVwhLcXFhD0Tcd-oJvFFNlsS9lUDhhiqsaEz8BRlrhgHqxLDFckgpF00dqJjgiRPTnzGdBTDk2ezfDNvbpcGKr_fEjTufdZumJqFGk9UcOsKwkYvad7nj9weII3Y5ufgmB46_513GQnnKD8HLw-wl53XUOA/r8qhg8bo2l6v3pp/Curr%C3%ADculo+-+Vitor+Gabriel+Winck.docx">Baixar Currículo</a>
             </div>
             <div class="home__image">
                 <img src="./images/code-1076536_1920.jpg" alt="Tela com linhas de códigos html">
@@ -64,22 +64,22 @@
         <section class="contact" id="contact">
             <ul class="contact__list">
                 <li class="contact__list__item">
-                    <a href="#"><img src="./images/user.svg" alt=""></a>
-                    <h4>Nome</h4>
-                    <p>Vitor Gabriel Winck</p>
-                </li>
-                <li class="contact__list__item">
-                    <a href="#"><img src="./images/phone.svg" alt=""></a>
+                    <div class="contact__list__item__button" href="#" title="Copiar número" onclick="copyInfo('tel')"><img src="./images/phone.svg" alt="Telefone"></div>
                     <h4>Telefone</h4>
-                    <p>(51) 99367-7792</p>
+                    <p id="tel">(51) 99367-7792</p>
                 </li>
                 <li class="contact__list__item">
-                    <a href="#"><img src="./images/mail.svg" alt=""></a>
+                    <div class="contact__list__item__button" href="#" title="Copiar e-mail" onclick="copyInfo('email')"><img src="./images/mail.svg" alt="E-mail"></div>
                     <h4>E-mail</h4>
-                    <p>vitorgabrielwinck2222@gmail.com</p>
+                    <p id="email">vitorgabrielwinck2222@gmail.com</p>
                 </li>
                 <li class="contact__list__item">
-                    <a href="#"><img src="./images/instagram.svg" alt=""></a>
+                    <a class="contact__list__item__button" href="https://www.linkedin.com/in/vitor-winck-37645b305/" target="_blank" title="Abrir em nova guia"><img src="./images/linkedin.svg" alt="LinkedIn"></a>
+                    <h4>LinkedIn</h4>
+                    <p>Vitor Winck</p>
+                </li>
+                <li class="contact__list__item">
+                    <a class="contact__list__item__button" href="https://www.instagram.com/_vitorwinck" target="_blank" title="Abrir em nova guia"><img src="./images/instagram.svg" alt="Instagram"></a>
                     <h4>Instagram</h4>
                     <p>_vitorwinck</p>
                 </li>
@@ -91,7 +91,7 @@
                 <div class="projects__list__item">
                     <img src="https://via.placeholder.com/500x300" alt="">
                     <h4 class="projects__list__item__title">Nome do Projeto</h4>
-                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <h5 class="projects__list__item__sub-title text--small">Linguagem utilizada</h5>
                     <div class="projects__list__item__buttons">
                         <a class="btn" href="#">Acessar projeto</a>
                         <a class="btn" href="#">Acessar repositório</a>
@@ -100,7 +100,7 @@
                 <div class="projects__list__item">
                     <img src="https://via.placeholder.com/500x300" alt="">
                     <h4 class="projects__list__item__title">Nome do Projeto</h4>
-                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <h5 class="projects__list__item__sub-title text--small">Linguagem utilizada</h5>
                     <div class="projects__list__item__buttons">
                         <a class="btn" href="#">Acessar projeto</a>
                         <a class="btn" href="#">Acessar repositório</a>
@@ -109,7 +109,7 @@
                 <div class="projects__list__item">
                     <img src="https://via.placeholder.com/500x300" alt="">
                     <h4 class="projects__list__item__title">Nome do Projeto</h4>
-                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <h5 class="projects__list__item__sub-title text--small">Linguagem utilizada</h5>
                     <div class="projects__list__item__buttons">
                         <a class="btn" href="#">Acessar projeto</a>
                         <a class="btn" href="#">Acessar repositório</a>
@@ -118,7 +118,7 @@
                 <div class="projects__list__item">
                     <img src="https://via.placeholder.com/500x300" alt="">
                     <h4 class="projects__list__item__title">Nome do Projeto</h4>
-                    <h5 class="projects__list__item__sub-title text--small">Lingaguem utilizada</h5>
+                    <h5 class="projects__list__item__sub-title text--small">Linguagem utilizada</h5>
                     <div class="projects__list__item__buttons">
                         <a class="btn" href="#">Acessar projeto</a>
                         <a class="btn" href="#">Acessar repositório</a>
@@ -128,18 +128,11 @@
         </section>
     </div>
     <footer class="footer">
-        &copy;2024 - Todos os direitos reservados | Vitor Gabriel Winck
+        <p class="footer__content">&copy;2024 - Todos os direitos reservados | Vitor Gabriel Winck</p>
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="./scripts/main.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.hamburguer-menu').click(function() {
-                $('.header__navbar').slideToggle();
-            })
-        })
-    </script>
 </body>
 </html>

@@ -18,6 +18,10 @@
                 color: #D7F205;
                 font-family: variables.$ubuntuMono;
                 font-weight: bold;
+
+                @media screen and (max-width: variables.$mobile) {
+                    font-size: 26px;
+                }
             }
     
             @media screen and (max-width: variables.$mobile) {

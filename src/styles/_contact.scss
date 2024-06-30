@@ -1,18 +1,21 @@
+@use 'variables';
+
 .contact {
-    padding-bottom: 100px;
+    padding: 100px 0 100px;
     border-bottom: 1px solid rgba(215, 242, 5, 0.5);
 
     &__list {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
 
         &__item {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
 
-            a {
+            &__button {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -23,15 +26,44 @@
                 margin-bottom: 8px;
                 background-color: #F2E205;
                 transition: all .2s ease-in-out; 
-                
+
+                img {
+                    transition: all .2s ease-in-out;
+                }
+
                 &:hover {
                     transform: scale(1.1);
+
+                    img {
+                        filter: invert(100%);
+                    }
                 }
             }
 
             h4 {
                 margin-bottom: 4px;
             }
+
+            @media screen and (max-width: variables.$mobile) {
+                margin-bottom: 64px;
+            }
+
+            @media screen and (min-width: variables.$tabletMin) and (max-width: variables.$tabletMax) {
+                margin-bottom: 32px;
+            }
         }
+
+        @media screen and (max-width: variables.$mobile) {
+            display: block;
+        }
+        
+        @media screen and (min-width: variables.$tabletMin) and (max-width: variables.$tabletMax) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: variables.$mobile) {
+        padding-bottom: 36px;
     }
 }
