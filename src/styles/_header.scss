@@ -4,8 +4,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
     padding: 24px 0;
-    border-bottom: 1px solid #D7F205;
+    border-bottom: 1px solid variables.$color1;
+    transition: all .2s ease-in-out;
+
+    &--is-scrolling {
+        padding: 12px;
+        max-width: 1024px;
+        top: 16px;
+
+        background-color: rgba(0, 0, 0, 0.9);
+        border: 2px solid rgba(215, 242, 5, 0.5);
+        border-radius: 16px;
+    }
 
     &__content {
         display: flex;
@@ -15,7 +32,7 @@
         &__title {
 
             h1 {
-                color: #D7F205;
+                color: variables.$color1;
                 font-family: variables.$ubuntuMono;
                 font-weight: bold;
 
@@ -38,18 +55,20 @@
             display: none;
             flex-direction: column;
             align-items: center;
+
             padding: 12px;
-            border: 1px solid #D7F205;
-            border-radius: 8px;
             max-width: 48px;
             margin-left: 32px;
+
+            border: 1px solid variables.$color1;
+            border-radius: 8px;
             cursor: pointer;
         
             span {
                 display: block;
                 width: 26px;
                 height: 2px;
-                background-color: #D7F205;
+                background-color: variables.$color1;
             }
             
             &__line {
@@ -74,7 +93,7 @@
             a {
                 padding: 8px;
 
-                color: #5581D9;
+                color: variables.$color3;
                 transition: all .2s ease-in-out;
             }
 
@@ -86,14 +105,15 @@
             }
 
             &--is-active {
-                border: 2px solid #D7F205;
+                background-color: rgba(242, 226, 5, 0.1);
+                border: 2px solid variables.$color1;
                 border-radius: 10px;
 
                 a {
-                    color: #F2E205;
+                    color: variables.$color2;
 
                     &:hover {
-                        color: #F2E205;
+                        color: variables.$color2;
                     }
                 }
             }
