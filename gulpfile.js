@@ -3,7 +3,7 @@ const sass = require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
 
-function compileScripts() {
+function scripts() {
     return gulp.src('./src/scripts/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('./dist/scripts'))
@@ -21,10 +21,10 @@ function minifyHtml() {
         .pipe(gulp.dest('./dist'))
 }
 
-exports.default = gulp.parallel(compileStyles, compileScripts, minifyHtml);
+exports.default = gulp.parallel(compileStyles, scripts, minifyHtml);
 
 exports.watch = function() {
     gulp.watch('./src/styles/*.scss', gulp.parallel(compileStyles))
-    gulp.watch('./src/scripts/*.js', gulp.parallel(compileScripts))
+    gulp.watch('./src/scripts/*.js', gulp.parallel(scripts))
     gulp.watch('./src/*.html'), gulp.parallel(minifyHtml)
 }
