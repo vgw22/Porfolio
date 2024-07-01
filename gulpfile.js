@@ -1,67 +1,30 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const uglify = require('gulp-uglify');
+const htmlmin = require('gulp-htmlmin');
 
-const paths = {
-    styles: {
-        src: './src/styles/*.scss',
-        dest: 'dist/styles/'
-    }
-};
+function compileScripts() {
+    return gulp.src('./src/scripts/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/scripts'))
+}
 
-function compileStyles(cb) {
-    gulp.src(paths.styles.src)
+function compileStyles() {
+    return gulp.src('./src/styles/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(gulp.dest(paths.styles.dest));
-    cb();
+        .pipe(gulp.dest('./dist/styles'))
 }
 
-function watchFiles() {
-    gulp.watch(paths.styles.src, compileStyles);
+function minifyHtml() {
+    return gulp.src('./src/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('./dist'))
 }
 
-exports.compileStyles = compileStyles;
-exports.watch = gulp.series(
-    gulp.parallel(compileStyles),
-    watchFiles
-)
+exports.default = gulp.parallel(compileStyles, compileScripts, minifyHtml);
 
-// const gulp = require('gulp');
-// const htmlmin = require('gulp-htmlmin');
-// const sass = require('gulp-sass')(require('sass'));
-
-// const paths = {
-//     html: {
-//         src: './src/*.html',
-//         dest: 'dist/'
-//     },
-//     styles: {
-//         src: './src/styles/*.scss',
-//         dest: 'dist/styles/'
-//     }
-// };
-
-// function minifyHtml(cb) {
-//     gulp.src(paths.html.src)
-//         .pipe(htmlmin({ collapseWhitespace: true }))
-//         .pipe(gulp.dest(paths.html.dest));
-//     cb();
-// }
-
-// function compileSass(cb) {
-//     gulp.src(paths.styles.src)
-//         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-//         .pipe(gulp.dest(paths.styles.dest));
-//     cb();
-// }
-
-// function watchFiles() {
-//     gulp.watch(paths.html.src, minifyHtml);
-//     gulp.watch(paths.styles.src, compileSass);
-// }
-
-// exports.minifyHtml = minifyHtml;
-// exports.compileSass = compileSass;
-// exports.watch = gulp.series(
-//     gulp.parallel(minifyHtml, compileSass),
-//     watchFiles
-// )
+exports.watch = function() {
+    gulp.watch('./src/styles/*.scss', gulp.parallel(compileStyles))
+    gulp.watch('./src/scripts/*.js', gulp.parallel(compileScripts))
+    gulp.watch('./src/*.html'), gulp.parallel(minifyHtml)
+}
